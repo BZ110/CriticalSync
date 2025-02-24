@@ -1,0 +1,63 @@
+# Go to your pterodactyl database settings.
+# 1. Create a new database, call it anything, it doesn't matter.
+# 2. Click on the settings icon next to the database you created.
+# 3. Copy the JDBC String and paste it here.
+
+# You're ready! <3
+
+jdbc_string: "DEFAULT"
+
+# ADVANCED: if you don't know what you're doing, then get someone else who does.
+
+# The excluded identifier for each table. By default, this is "TABLE_TYPE".
+table_type_identifier: "TABLE_TYPE"
+
+# Exclude a table from being created if it does or doesn't exist.
+exclude_creation: ["discord-sync"]
+
+tables:
+
+  # EXAMPLE TABLE: user_info
+  user_info:
+
+    # The type of data / how the data is going to be saved.
+    # Types:
+      # USER: The placeholder is a user, and loops every user online every 5 minutes.
+      # GAME: The placeholder is console, and loops once every 5 minutes.
+    TABLE_TYPE: "USER"
+
+
+    # Each column inside the table.
+    # column: ["TYPE", "Placeholder API (assuming you are the player)"]
+
+    # SPECIAL: id column.
+      # When data is updated, the ID column is used to update said data.
+      # Instead of making a new row every time, we'll instead update other parameters with the same ID.
+    id: ["TEXT", "%player_uuid%"]
+
+    # Other parameters
+    name: ["TEXT", "%player_name%"]
+    kills: ["INT", "%statistic_player_kills%"]
+    deaths: ["INT", "%statistic_deaths%"]
+
+  # EXAMPLE TABLE: game_info
+  game_info:
+
+    # In this scenario, we are saving game data instead of player data.
+    TABLE_TYPE: "GAME"
+
+
+    # Since we only want one or so things being updated, we'll set the ID to 1.
+    # This is a string array, so we put a String as 1 here, however in the database, it won't be like this.
+    id: ["INT", "1"]
+
+    # Other parameters
+    online: ["TEXT", "%server_online%/%server_max_players%"]
+    uptime: ["TEXT", "%server_uptime%"]
+    tps: ["TEXT", "%%server_tps_1%/20"]
+
+# Please don't change this. (<3)
+credits:
+  author: "Critical <3"
+  website: "https://critical.lol/"
+  version: 1.0

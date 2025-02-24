@@ -1,0 +1,4 @@
+org\criticalking\criticalSync\CriticalSync.class
+org\criticalking\criticalSync\SQLInstance.class
+org\criticalking\criticalSync\PlaceholderParser.class
+org\criticalking\criticalSync\Table.class

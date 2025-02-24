@@ -1,0 +1,8 @@
+name: CriticalSync
+version: '1.0-SNAPSHOT'
+description: "A plugin that syncs relative player data."
+author: "Critical <3"
+website: "https://critical.lol/"
+main: org.criticalking.criticalSync.CriticalSync
+api-version: '1.19'
+depend: [PlaceholderAPI]
