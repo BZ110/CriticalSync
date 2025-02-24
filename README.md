@@ -1,6 +1,6 @@
 # CriticalSync
 
-CriticalSync is a Minecraft server plugin designed to easily sync server data to SQL databases. It dynamically creates and updates tables based on a configurable YAML file, allowing you to store both player-specific and game-wide data in your database. The plugin also creates a full SQL dump backup when the server shuts down.
+CriticalSync is a Minecraft server plugin designed to easily sync server data to SQL databases. It dynamically creates and updates tables based on a configurable YAML file, allowing you to store both player-specific and game-wide data in your database. ~~The plugin also creates a full SQL dump backup when the server shuts down.~~ (SCRAP)
 
 ## Features
 
